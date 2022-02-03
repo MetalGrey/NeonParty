@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
-
+   // public GameObject[] startPosition;
     public ControlType controlType;
     public float speed;
     public Joystick joystick;
@@ -27,16 +29,45 @@ public class player : MonoBehaviour
     public AudioSource hit1;
     public AudioSource hit2;
     public GameObject AnimObj;
- 
+
+    public GameObject data;
+    public GameObject dataPrefab;
+    public bool Bgun1;
+    public bool Bgun2;
+    public bool Bgun3;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
+        //get info from data
+        data = GameObject.Find("Data");
+        if (data == null)
+        {
+            data = GameObject.Find("Data(Clone)");
+        }
+        PlayerData datascript = data.GetComponent<PlayerData>();
+        float currentspeed = datascript.currentspeed;
+        int currethp = datascript.currethp;
+        Bgun1 = datascript.BGun1;
+        Bgun2 = datascript.BGun2;
+        Bgun3 = datascript.BGun3;
+        Life = currethp;
+        speed = currentspeed;
+        StartCoroutine("DeleteData");
+        //Destroy(data);
+
+    }
+    private void Awake()
+    {
+        
+      //  DontDestroyOnLoad(gameObject);
+       // gameObject.transform.position = new Vector3(startPosition[0].transform.position.x, startPosition[0].transform.position.y, gameObject.transform.position.z);
+    }
 
     void Update()
     {
-
+        //startPosition = GameObject.FindGameObjectsWithTag("spawn");
         if (controlType == ControlType.Adnroid)
         {
             moveInput = new Vector2(joystick.Horizontal, joystick.Vertical);
@@ -135,8 +166,25 @@ public class player : MonoBehaviour
             speed = speed + 0.5f;
             Destroy(collision.gameObject);
         }
-        
 
+        if (collision.gameObject.tag == "gun2")
+        {
+            Bgun2 = true;
+            Bgun1 = false;
+            Bgun3 = false;
+        }
+        else if (collision.gameObject.tag == "gun1")
+        {
+            Bgun2 = false;
+            Bgun1 = true;
+            Bgun3 = false;
+        }
+        else if (collision.gameObject.tag == "gun3")
+        {
+            Bgun2 = false;
+            Bgun1 = false;
+            Bgun3 = true;
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -158,11 +206,17 @@ public class player : MonoBehaviour
                 }
                 if (Life == 0)
                 {
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("lobby");
                 }
             }
         }
     }
+    IEnumerator DeleteData()
+    {
 
-
+        yield return new WaitForSeconds(7f);
+        Destroy(data);
+        Debug.Log("Data was destroyed");
+        Instantiate(dataPrefab);
+    }
 }

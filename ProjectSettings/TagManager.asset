@@ -26,6 +26,7 @@ TagManager:
   - bossPolice
   - bossPoliceObj
   - booster
+  - spawn
   layers:
   - Default
   - TransparentFX

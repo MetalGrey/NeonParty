@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2667,6 +2667,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1270996584}
     m_Modifications:
+    - target: {fileID: 4962729329883644867, guid: b27183c9dae552c4f81716ea462b50b1,
+        type: 3}
+      propertyPath: TextFortextComponent
+      value: Feel The Beat Inc  Floor 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4962729329883644870, guid: b27183c9dae552c4f81716ea462b50b1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -11712,6 +11717,7 @@ MonoBehaviour:
   Life: 0
   Player: []
   hpplayer: {fileID: 0}
+  booster: {fileID: 0}
   shoot1Sound: {fileID: 0}
   shoot2Sound: {fileID: 0}
 --- !u!1 &2018684992
@@ -12689,6 +12695,12 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 6271057}
+    - target: {fileID: 2317553452506436523, guid: 6c85ade1dafd72246a98cf137a915896,
+        type: 3}
+      propertyPath: dataPrefab
+      value: 
+      objectReference: {fileID: 5981003574758956393, guid: 1f8adff139afe4549b400423ddb41be4,
+        type: 3}
     - target: {fileID: 3032314054490098789, guid: 6c85ade1dafd72246a98cf137a915896,
         type: 3}
       propertyPath: m_RootOrder
