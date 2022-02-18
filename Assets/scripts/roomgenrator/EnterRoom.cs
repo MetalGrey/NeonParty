@@ -11,7 +11,7 @@ public class EnterRoom : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enterboss")
         {
-            EnemySpawn.SetActive(true);
+            //EnemySpawn.SetActive(true);
             for (int i = 0; i < light.Length; i++)
             {
                 light[i].SetActive(true);

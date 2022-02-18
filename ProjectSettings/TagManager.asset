@@ -27,6 +27,7 @@ TagManager:
   - bossPoliceObj
   - booster
   - spawn
+  - DiscoBall
   layers:
   - Default
   - TransparentFX

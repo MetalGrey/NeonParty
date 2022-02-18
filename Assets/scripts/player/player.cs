@@ -150,7 +150,7 @@ public class player : MonoBehaviour
             //Debug.Log(Life);
             if (Life == 0)
             {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("lobby");
             }
         }
         else if (collision.gameObject.tag == "hp1")

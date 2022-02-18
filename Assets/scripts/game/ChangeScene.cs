@@ -26,6 +26,13 @@ public class ChangeScene : MonoBehaviour
                 datalast = GameObject.Find("Data(Clone)");
                 Destroy(datalast);
                 Instantiate(Data);
+                SceneManager.LoadScene("3");
+            }
+            else if (SceneName == "3")
+            {
+                datalast = GameObject.Find("Data(Clone)");
+                Destroy(datalast);
+                Instantiate(Data);
                 SceneManager.LoadScene("lobby");
             }
         }
