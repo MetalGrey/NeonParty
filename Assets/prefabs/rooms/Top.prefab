@@ -6967,7 +6967,7 @@ PrefabInstance:
     - target: {fileID: 8273467535706116693, guid: b3b6a759787b64446bfc732d70b4179e,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CloseDoor
       objectReference: {fileID: 0}
     - target: {fileID: 8997631892140068433, guid: b3b6a759787b64446bfc732d70b4179e,
         type: 3}

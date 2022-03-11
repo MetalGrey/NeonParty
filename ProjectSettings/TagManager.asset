@@ -28,6 +28,9 @@ TagManager:
   - booster
   - spawn
   - DiscoBall
+  - Bomb
+  - CloseDoor
+  - djForm
   layers:
   - Default
   - TransparentFX

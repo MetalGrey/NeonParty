@@ -49,6 +49,10 @@ public class RoomVariants : MonoBehaviour
         {
             bossposition = GameObject.FindGameObjectWithTag("bossPoliceObj");
         }
+        else if (SceneName == "3")
+        {
+            bossposition = GameObject.FindGameObjectWithTag("DiscoBall");
+        }
         bossposition.transform.position = new Vector3(roomposition.transform.position.x + 2.25f, roomposition.transform.position.y - 3.25f, roomposition.transform.transform.position.z);
     }
 }

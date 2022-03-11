@@ -16,6 +16,7 @@ public class DiscoBall : MonoBehaviour
 
     public GameObject shoot360;
     public GameObject portal;
+    public GameObject BombOverBrodway;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class DiscoBall : MonoBehaviour
         if (currentHealth == 39)
         {
             shoot360.SetActive(true);
+            BombOverBrodway.SetActive(true);
         }
         else if (currentHealth == 0)
         {
